@@ -19,7 +19,6 @@ namespace Game.Installers
 			Container.Bind<MoveMap>().FromInstance(_moveMap).AsSingle();
 			Container.Bind<IMovementInput>().To<PlayerInput>().AsSingle();
 			Container.BindInterfacesAndSelfTo<PlayerMovement>().AsSingle().WithArguments(_initialPosition);
-			;
 			Container.Bind<MoveableView>().FromComponentsInHierarchy().AsSingle();
 		}
 	}
