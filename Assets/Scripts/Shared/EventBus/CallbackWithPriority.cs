@@ -1,4 +1,4 @@
-﻿namespace Game.Shared
+﻿namespace Game.Shared.EventBus
 {
 	public class CallbackWithPriority
 	{

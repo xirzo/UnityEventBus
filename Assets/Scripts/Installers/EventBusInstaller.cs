@@ -1,4 +1,4 @@
-using Game.Shared;
+using Game.Shared.EventBus;
 using Zenject;
 
 namespace Game.Installers
