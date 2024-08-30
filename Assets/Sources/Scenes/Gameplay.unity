@@ -674,6 +674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93be369552eb419bbb347253d3e08c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _initialPosition: {x: 1, y: 0, z: 0}
   _moveMap:
     _upKey: 119
     _downKey: 115
@@ -1267,6 +1268,68 @@ MonoBehaviour:
   _installerPrefabs: []
   _autoRun: 1
   _kernel: {fileID: 0}
+--- !u!1001 &1650491040
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1901901209}
+    m_Modifications:
+    - target: {fileID: 1837698803395891701, guid: 0a50d9a32539a464191dc941ba4b5e5e, type: 3}
+      propertyPath: m_Name
+      value: Player_View_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027253285834807168, guid: 0a50d9a32539a464191dc941ba4b5e5e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027253285834807168, guid: 0a50d9a32539a464191dc941ba4b5e5e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027253285834807168, guid: 0a50d9a32539a464191dc941ba4b5e5e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027253285834807168, guid: 0a50d9a32539a464191dc941ba4b5e5e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027253285834807168, guid: 0a50d9a32539a464191dc941ba4b5e5e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027253285834807168, guid: 0a50d9a32539a464191dc941ba4b5e5e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027253285834807168, guid: 0a50d9a32539a464191dc941ba4b5e5e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027253285834807168, guid: 0a50d9a32539a464191dc941ba4b5e5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027253285834807168, guid: 0a50d9a32539a464191dc941ba4b5e5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027253285834807168, guid: 0a50d9a32539a464191dc941ba4b5e5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0a50d9a32539a464191dc941ba4b5e5e, type: 3}
+--- !u!4 &1650491041 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5027253285834807168, guid: 0a50d9a32539a464191dc941ba4b5e5e, type: 3}
+  m_PrefabInstance: {fileID: 1650491040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1699902678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1281,11 +1344,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5027253285834807168, guid: 0a50d9a32539a464191dc941ba4b5e5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5027253285834807168, guid: 0a50d9a32539a464191dc941ba4b5e5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.95
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5027253285834807168, guid: 0a50d9a32539a464191dc941ba4b5e5e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1428,6 +1491,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1699902679}
+  - {fileID: 1650491041}
   m_Father: {fileID: 1574212890}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1901901210
@@ -1442,6 +1506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93be369552eb419bbb347253d3e08c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _initialPosition: {x: -1, y: 0, z: 0}
   _moveMap:
     _upKey: 273
     _downKey: 274

@@ -7,9 +7,10 @@ namespace Game.Domain.Movement
 	{
 		private readonly IMovementInput _input;
 
-		public PlayerMovement(IMovementInput input)
+		public PlayerMovement(IMovementInput input, Vector3 initialPosition)
 		{
 			_input = input;
+			Position = initialPosition;
 		}
 
 		public float Speed { get; } = 5f;
