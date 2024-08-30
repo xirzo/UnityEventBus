@@ -7,7 +7,7 @@ namespace Game.Installers
 	{
 		public override void InstallBindings()
 		{
-			Container.Bind<ScoreCounter>().AsSingle();
+			Container.BindInterfacesAndSelfTo<ScoreCounter>().AsSingle();
 		}
 	}
 }
