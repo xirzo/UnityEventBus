@@ -1,12 +1,19 @@
-﻿using Game.Domain.Movement;
+﻿using Fusion;
+using Game.Domain.Movement;
 using UnityEngine;
 using Zenject;
 
 namespace Game.View.Movement
 {
-	public class MoveableView : MonoBehaviour
+	[RequireComponent(typeof(NetworkTransform))]
+	public class MoveableView : NetworkBehaviour
 	{
 		private IMovement _movement;
+
+		private void Awake()
+		{
+			Debug.Log("Started {0}", this);
+		}
 
 		private void Update()
 		{
