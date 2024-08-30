@@ -1,19 +1,25 @@
-﻿using Game.Domain.Movement;
-using Zenject;
+﻿using Fusion;
+using UnityEngine;
 
 namespace Game.Domain.Entities
 {
-	public class Player : IEntity
+	public class Player : NetworkBehaviour
 	{
-		private readonly IMovement _movement;
+		// private readonly IMovement _movement;
+		private readonly float _speed = 10f;
+		private GameplayInput _input;
 
-		[Inject]
-		public Player(IMovement movement, string name)
+		public override void FixedUpdateNetwork()
 		{
-			_movement = movement;
-			Name = name;
+			_input = GetInput<GameplayInput>().GetValueOrDefault();
+
+			Move();
 		}
 
-		public string Name { get; }
+		private void Move()
+		{
+			var direction = _input.Direction * _speed * Time.deltaTime;
+			transform.Translate(direction);
+		}
 	}
 }

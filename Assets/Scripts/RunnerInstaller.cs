@@ -9,6 +9,8 @@ namespace Game
 {
 	public class RunnerInstaller : MonoBehaviour, INetworkRunnerCallbacks
 	{
+		[SerializeField] private NetworkRunner _runnerPrefab;
+
 		private NetworkRunner _runner;
 
 		private void OnGUI()
@@ -102,7 +104,7 @@ namespace Game
 		private async void StartGame(GameMode mode)
 		{
 			// Create the Fusion runner and let it know that we will be providing user input
-			_runner = gameObject.AddComponent<NetworkRunner>();
+			_runner = Instantiate(_runnerPrefab).GetComponent<NetworkRunner>();
 			_runner.ProvideInput = true;
 
 			// Create the NetworkSceneInfo from the current scene

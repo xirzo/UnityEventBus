@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Fusion;
+using Game.Domain.Entities;
 using UnityEngine;
 
 namespace Game
@@ -10,6 +11,7 @@ namespace Game
 		[SerializeField] private Transform _playerParent;
 
 		private readonly Dictionary<PlayerRef, NetworkObject> _spawnedCharacters = new();
+		public Player LocalPlayer { get; private set; }
 
 		public void PlayerJoined(PlayerRef player)
 		{
@@ -28,6 +30,19 @@ namespace Game
 
 			Runner.Despawn(networkObject);
 			_spawnedCharacters.Remove(player);
+		}
+
+		public override void Render()
+		{
+			if (LocalPlayer != null) return;
+
+			var playerObject = Runner.GetPlayerObject(Runner.LocalPlayer);
+			LocalPlayer = playerObject != null ? playerObject.GetComponent<Player>() : null;
+		}
+
+		public override void Despawned(NetworkRunner runner, bool hasState)
+		{
+			LocalPlayer = null;
 		}
 	}
 }

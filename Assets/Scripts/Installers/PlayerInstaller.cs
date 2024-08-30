@@ -1,5 +1,4 @@
-﻿using Game.Domain.Entities;
-using Game.Domain.Inputs;
+﻿using Game.Domain.Inputs;
 using Game.Domain.Movement;
 using Game.View.Movement;
 using UnityEngine;
@@ -15,9 +14,9 @@ namespace Game.Installers
 
 		public override void InstallBindings()
 		{
-			Container.Bind<IEntity>().To<Player>().AsSingle();
+			// Container.Bind<IEntity>().To<Player>().AsSingle();
 			Container.Bind<MoveMap>().FromInstance(_moveMap).AsSingle();
-			Container.Bind<IMovementInput>().To<PlayerInput>().AsSingle();
+			// Container.Bind<IMovementInput>().To<PlayerInput>().AsSingle();
 			Container.BindInterfacesAndSelfTo<PlayerMovement>().AsSingle().WithArguments(_initialPosition);
 			Container.Bind<MoveableView>().FromComponentsInHierarchy().AsSingle();
 		}

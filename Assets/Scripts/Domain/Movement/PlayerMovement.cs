@@ -5,9 +5,9 @@ namespace Game.Domain.Movement
 {
 	public class PlayerMovement : IMovement, ITickable
 	{
-		private readonly IMovementInput _input;
+		private readonly GameplayInput _input;
 
-		public PlayerMovement(IMovementInput input, Vector3 initialPosition)
+		public PlayerMovement(GameplayInput input, Vector3 initialPosition)
 		{
 			_input = input;
 			Position = initialPosition;
@@ -30,7 +30,7 @@ namespace Game.Domain.Movement
 
 		private void Move()
 		{
-			Direction = _input.GetMovement().normalized;
+			Direction = _input.Direction.normalized;
 			Velocity = Direction * (Speed * Time.deltaTime);
 			Position += Velocity;
 		}
