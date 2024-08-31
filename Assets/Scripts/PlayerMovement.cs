@@ -1,16 +1,12 @@
 ﻿using UnityEngine;
-using Zenject;
 
-namespace Game.Domain.Movement
+namespace Game
 {
-	public class PlayerMovement : IMovement, ITickable
+	public class PlayerMovement
 	{
-		private readonly GameplayInput _input;
-
-		public PlayerMovement(GameplayInput input, Vector3 initialPosition)
+		public PlayerMovement(Vector3 position)
 		{
-			_input = input;
-			Position = initialPosition;
+			Position = position;
 		}
 
 		public float Speed { get; } = 5f;
@@ -23,14 +19,9 @@ namespace Game.Domain.Movement
 			return Velocity.magnitude >= 0.01f;
 		}
 
-		public void Tick()
+		public void Move(Vector3 direction)
 		{
-			Move();
-		}
-
-		private void Move()
-		{
-			Direction = _input.Direction.normalized;
+			Direction = direction.normalized;
 			Velocity = Direction * (Speed * Time.deltaTime);
 			Position += Velocity;
 		}

@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Fusion;
-using Game.Domain.Entities;
 using UnityEngine;
 
 namespace Game

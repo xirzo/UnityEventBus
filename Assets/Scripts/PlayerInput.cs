@@ -10,11 +10,11 @@ namespace Game
 
 		public Vector2 Direction => _gameplayInput.Direction;
 
-		[Networked] public NetworkButtons Buttons { get; private set; }
+		[Networked] public NetworkButtons ButtonsPrevious { get; private set; }
 
 		public void AfterTick()
 		{
-			Buttons = GetInput<GameplayInput>().GetValueOrDefault().Buttons;
+			ButtonsPrevious = GetInput<GameplayInput>().GetValueOrDefault().Buttons;
 		}
 
 		public void BeforeTick()
